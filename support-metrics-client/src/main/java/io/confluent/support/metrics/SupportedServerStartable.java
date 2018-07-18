@@ -132,9 +132,9 @@ public class SupportedServerStartable {
 
   public void shutdown() {
     try {
+      log.info("Shutting down SupportedServer");
       if (metricsThread != null) {
         metricsThread.interrupt();
-        metricsThread.join();
       }
     } catch (Exception e) {
       // We catch any exceptions to prevent collateral damage to the more important broker
